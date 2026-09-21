@@ -28,7 +28,7 @@ hardware evidence. It restores the best validation checkpoint before evaluation.
 A complete [recorded H800 run](examples/synthetic-v2/README.md), including data
 and weights, is checked in. Across 180 held-out rows, the initialized model
 achieved **41.7%** accuracy, a train-majority baseline **52.2%**, and the trained
-model **100%** after 40 epochs (24.9 seconds). This is a simple synthetic rule
+model **100%** after 40 epochs (9.6 seconds). This is a simple synthetic rule
 learning demonstration with 12,225 parameters, not evidence of real-world or
 TypeSafe Jev parity. The reserved calibration split is unused.
 
@@ -74,4 +74,3 @@ pytest -q
 ```
 
 Licensed under Apache-2.0.
-

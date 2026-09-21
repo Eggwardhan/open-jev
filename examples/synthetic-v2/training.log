@@ -103,7 +103,7 @@
   "gpu_name": "NVIDIA H800",
   "peak_allocated_bytes": 75869184,
   "parameter_count": 12225,
-  "training_seconds": 24.933961387723684,
+  "training_seconds": 9.570751633495092,
   "selected_epoch": 40,
   "reload_max_abs_error": 0.0
 }

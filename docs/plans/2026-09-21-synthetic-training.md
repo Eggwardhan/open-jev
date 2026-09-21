@@ -35,7 +35,7 @@ Run ruff, the complete pytest suite, and the actual training command. Inspect ar
 - [x] Deterministic v2 data generator with unique cases, shuffled Choice candidates and three tasks.
 - [x] Regression tests reproduce and fix unknown Noul candidate tokens and checkpoint architecture mismatch.
 - [x] Seeded runner, CUDA support, validation checkpoint selection, train-majority and initialized baselines.
-- [x] Actual H800 run: 1,800 rows, 40 epochs, 24.93 seconds, 180/180 test predictions correct.
+- [x] Actual H800 run: 1,800 rows, 40 epochs, 9.57 seconds, 180/180 test predictions correct.
 - [x] Dataset split/source/file hashes checked; GPU weights reloaded locally on CPU.
 - [x] Full dataset, 52 KB checkpoint, predictions, plots, and measured report prepared for publication.
 
