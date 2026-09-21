@@ -1,0 +1,2102 @@
+[
+  {
+    "id": "case-0351-choice",
+    "type": "choice",
+    "label": "automate",
+    "confidence": 0.9986178874969482,
+    "probabilities": {
+      "review": 0.001382099580951035,
+      "automate": 0.9986178874969482
+    },
+    "target": "automate"
+  },
+  {
+    "id": "case-0351-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9995019435882568,
+    "probabilities": {
+      "false": 0.9995019435882568,
+      "true": 0.0004980262601748109
+    },
+    "target": false
+  },
+  {
+    "id": "case-0351-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.9983031749725342,
+    "probabilities": {
+      "low": 0.9983031749725342,
+      "moderate": 0.0010860376060009003,
+      "high": 0.0006097952136769891,
+      "critical": 9.37748268370342e-07
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0506-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9998125433921814,
+    "probabilities": {
+      "review": 0.9998125433921814,
+      "automate": 0.00018748771981336176
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0506-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.999836802482605,
+    "probabilities": {
+      "false": 0.00016322328883688897,
+      "true": 0.999836802482605
+    },
+    "target": true
+  },
+  {
+    "id": "case-0506-score",
+    "type": "score",
+    "label": "high",
+    "confidence": 0.9952207207679749,
+    "probabilities": {
+      "low": 0.003506347071379423,
+      "moderate": 0.00025004911003634334,
+      "high": 0.9952207207679749,
+      "critical": 0.001022819895297289
+    },
+    "target": 2
+  },
+  {
+    "id": "case-0537-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9997559189796448,
+    "probabilities": {
+      "automate": 0.00024410757760051638,
+      "review": 0.9997559189796448
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0537-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.999705970287323,
+    "probabilities": {
+      "false": 0.0002940241538453847,
+      "true": 0.999705970287323
+    },
+    "target": true
+  },
+  {
+    "id": "case-0537-score",
+    "type": "score",
+    "label": "high",
+    "confidence": 0.9967557787895203,
+    "probabilities": {
+      "low": 0.002304177964106202,
+      "moderate": 0.0002837061765603721,
+      "high": 0.9967557787895203,
+      "critical": 0.0006562903290614486
+    },
+    "target": 2
+  },
+  {
+    "id": "case-0307-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9998326301574707,
+    "probabilities": {
+      "automate": 0.0001673778606345877,
+      "review": 0.9998326301574707
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0307-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9997835755348206,
+    "probabilities": {
+      "false": 0.00021647139510605484,
+      "true": 0.9997835755348206
+    },
+    "target": true
+  },
+  {
+    "id": "case-0307-score",
+    "type": "score",
+    "label": "high",
+    "confidence": 0.9969741106033325,
+    "probabilities": {
+      "low": 0.0019419030286371708,
+      "moderate": 0.0002898869279306382,
+      "high": 0.9969741106033325,
+      "critical": 0.0007941746152937412
+    },
+    "target": 2
+  },
+  {
+    "id": "case-0083-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9997426867485046,
+    "probabilities": {
+      "automate": 0.0002573271340224892,
+      "review": 0.9997426867485046
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0083-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9998094439506531,
+    "probabilities": {
+      "false": 0.0001906194956973195,
+      "true": 0.9998094439506531
+    },
+    "target": true
+  },
+  {
+    "id": "case-0083-score",
+    "type": "score",
+    "label": "high",
+    "confidence": 0.9936479926109314,
+    "probabilities": {
+      "low": 0.00508208479732275,
+      "moderate": 0.000266949093202129,
+      "high": 0.9936479926109314,
+      "critical": 0.001002994365990162
+    },
+    "target": 2
+  },
+  {
+    "id": "case-0249-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9993659853935242,
+    "probabilities": {
+      "automate": 0.0006339722312986851,
+      "review": 0.9993659853935242
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0249-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9996205568313599,
+    "probabilities": {
+      "false": 0.9996205568313599,
+      "true": 0.0003794438671320677
+    },
+    "target": false
+  },
+  {
+    "id": "case-0249-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.9985760450363159,
+    "probabilities": {
+      "low": 0.0013043704675510526,
+      "moderate": 0.9985760450363159,
+      "high": 0.00011723067291313782,
+      "critical": 2.3533759758720407e-06
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0184-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9999995231628418,
+    "probabilities": {
+      "review": 0.9999995231628418,
+      "automate": 4.4783553221350303e-07
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0184-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.999270498752594,
+    "probabilities": {
+      "false": 0.0007294504321180284,
+      "true": 0.999270498752594
+    },
+    "target": true
+  },
+  {
+    "id": "case-0184-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.998221218585968,
+    "probabilities": {
+      "low": 0.0014005580451339483,
+      "moderate": 0.998221218585968,
+      "high": 5.41989975317847e-05,
+      "critical": 0.0003240201040171087
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0254-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 1.0,
+    "probabilities": {
+      "automate": 3.90209962120025e-08,
+      "review": 1.0
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0254-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 1.0,
+    "probabilities": {
+      "false": 1.9344335910886912e-08,
+      "true": 1.0
+    },
+    "target": true
+  },
+  {
+    "id": "case-0254-score",
+    "type": "score",
+    "label": "critical",
+    "confidence": 0.9952574372291565,
+    "probabilities": {
+      "low": 0.0005080546252429485,
+      "moderate": 0.0011130383936688304,
+      "high": 0.003121490590274334,
+      "critical": 0.9952574372291565
+    },
+    "target": 3
+  },
+  {
+    "id": "case-0306-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9997677206993103,
+    "probabilities": {
+      "review": 0.9997677206993103,
+      "automate": 0.0002323031221749261
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0306-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.999777615070343,
+    "probabilities": {
+      "false": 0.00022234975767787546,
+      "true": 0.999777615070343
+    },
+    "target": true
+  },
+  {
+    "id": "case-0306-score",
+    "type": "score",
+    "label": "high",
+    "confidence": 0.9960715770721436,
+    "probabilities": {
+      "low": 0.002908422378823161,
+      "moderate": 0.00023523456184193492,
+      "high": 0.9960715770721436,
+      "critical": 0.00078472716268152
+    },
+    "target": 2
+  },
+  {
+    "id": "case-0370-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9999995231628418,
+    "probabilities": {
+      "automate": 4.381829512567492e-07,
+      "review": 0.9999995231628418
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0370-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9991419315338135,
+    "probabilities": {
+      "false": 0.0008580347639508545,
+      "true": 0.9991419315338135
+    },
+    "target": true
+  },
+  {
+    "id": "case-0370-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.9982833862304688,
+    "probabilities": {
+      "low": 0.0013380181044340134,
+      "moderate": 0.9982833862304688,
+      "high": 5.8563771744957194e-05,
+      "critical": 0.0003200193168595433
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0464-choice",
+    "type": "choice",
+    "label": "automate",
+    "confidence": 0.998467743396759,
+    "probabilities": {
+      "automate": 0.998467743396759,
+      "review": 0.0015322603285312653
+    },
+    "target": "automate"
+  },
+  {
+    "id": "case-0464-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9995242357254028,
+    "probabilities": {
+      "false": 0.9995242357254028,
+      "true": 0.0004758260038215667
+    },
+    "target": false
+  },
+  {
+    "id": "case-0464-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.9984240531921387,
+    "probabilities": {
+      "low": 0.9984240531921387,
+      "moderate": 0.00100304267834872,
+      "high": 0.0005720546469092369,
+      "critical": 9.380674441672454e-07
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0476-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.999591052532196,
+    "probabilities": {
+      "review": 0.999591052532196,
+      "automate": 0.0004089003487024456
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0476-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9994204044342041,
+    "probabilities": {
+      "false": 0.9994204044342041,
+      "true": 0.0005796296754851937
+    },
+    "target": false
+  },
+  {
+    "id": "case-0476-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.9989388585090637,
+    "probabilities": {
+      "low": 0.0009602710488252342,
+      "moderate": 0.9989388585090637,
+      "high": 9.843720908975229e-05,
+      "critical": 2.3653999505768297e-06
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0321-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9998524188995361,
+    "probabilities": {
+      "automate": 0.0001475255558034405,
+      "review": 0.9998524188995361
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0321-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9998086094856262,
+    "probabilities": {
+      "false": 0.00019143805548083037,
+      "true": 0.9998086094856262
+    },
+    "target": true
+  },
+  {
+    "id": "case-0321-score",
+    "type": "score",
+    "label": "high",
+    "confidence": 0.9966198205947876,
+    "probabilities": {
+      "low": 0.002120591700077057,
+      "moderate": 0.000323500600643456,
+      "high": 0.9966198205947876,
+      "critical": 0.0009360961266793311
+    },
+    "target": 2
+  },
+  {
+    "id": "case-0437-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 1.0,
+    "probabilities": {
+      "review": 1.0,
+      "automate": 2.924121034197924e-08
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0437-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 1.0,
+    "probabilities": {
+      "false": 1.9436537712635982e-08,
+      "true": 1.0
+    },
+    "target": true
+  },
+  {
+    "id": "case-0437-score",
+    "type": "score",
+    "label": "critical",
+    "confidence": 0.9960922598838806,
+    "probabilities": {
+      "low": 0.00037696503568440676,
+      "moderate": 0.001194335171021521,
+      "high": 0.002336458768695593,
+      "critical": 0.9960922598838806
+    },
+    "target": 3
+  },
+  {
+    "id": "case-0544-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9998441934585571,
+    "probabilities": {
+      "review": 0.9998441934585571,
+      "automate": 0.00015584113134536892
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0544-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9998008608818054,
+    "probabilities": {
+      "false": 0.00019914648146368563,
+      "true": 0.9998008608818054
+    },
+    "target": true
+  },
+  {
+    "id": "case-0544-score",
+    "type": "score",
+    "label": "high",
+    "confidence": 0.9966296553611755,
+    "probabilities": {
+      "low": 0.0022329778876155615,
+      "moderate": 0.0002654596173670143,
+      "high": 0.9966296553611755,
+      "critical": 0.0008718619938008487
+    },
+    "target": 2
+  },
+  {
+    "id": "case-0508-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 1.0,
+    "probabilities": {
+      "automate": 4.404882147923672e-08,
+      "review": 1.0
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0508-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 1.0,
+    "probabilities": {
+      "false": 2.19854907612671e-08,
+      "true": 1.0
+    },
+    "target": true
+  },
+  {
+    "id": "case-0508-score",
+    "type": "score",
+    "label": "critical",
+    "confidence": 0.9935106635093689,
+    "probabilities": {
+      "low": 0.0005838670767843723,
+      "moderate": 0.001202327897772193,
+      "high": 0.004703072365373373,
+      "critical": 0.9935106635093689
+    },
+    "target": 3
+  },
+  {
+    "id": "case-0210-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9996799230575562,
+    "probabilities": {
+      "automate": 0.0003200369537808001,
+      "review": 0.9996799230575562
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0210-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9990704655647278,
+    "probabilities": {
+      "false": 0.9990704655647278,
+      "true": 0.0009295661002397537
+    },
+    "target": false
+  },
+  {
+    "id": "case-0210-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.9989249110221863,
+    "probabilities": {
+      "low": 0.0009784349240362644,
+      "moderate": 0.9989249110221863,
+      "high": 9.412944928044453e-05,
+      "critical": 2.506255441403482e-06
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0061-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9999996423721313,
+    "probabilities": {
+      "automate": 3.8096510479590506e-07,
+      "review": 0.9999996423721313
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0061-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9992403984069824,
+    "probabilities": {
+      "false": 0.000759631919208914,
+      "true": 0.9992403984069824
+    },
+    "target": true
+  },
+  {
+    "id": "case-0061-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.9986429810523987,
+    "probabilities": {
+      "low": 0.0010338107822462916,
+      "moderate": 0.9986429810523987,
+      "high": 4.653466021409258e-05,
+      "critical": 0.00027671197312884033
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0064-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9999996423721313,
+    "probabilities": {
+      "automate": 4.0995027461576683e-07,
+      "review": 0.9999996423721313
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0064-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9992353916168213,
+    "probabilities": {
+      "false": 0.000764670199714601,
+      "true": 0.9992353916168213
+    },
+    "target": true
+  },
+  {
+    "id": "case-0064-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.9989149570465088,
+    "probabilities": {
+      "low": 0.0008237429428845644,
+      "moderate": 0.9989149570465088,
+      "high": 3.553479109541513e-05,
+      "critical": 0.000225822368520312
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0099-choice",
+    "type": "choice",
+    "label": "automate",
+    "confidence": 0.9990022778511047,
+    "probabilities": {
+      "automate": 0.9990022778511047,
+      "review": 0.0009977467125281692
+    },
+    "target": "automate"
+  },
+  {
+    "id": "case-0099-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9994924068450928,
+    "probabilities": {
+      "false": 0.9994924068450928,
+      "true": 0.0005075816879980266
+    },
+    "target": false
+  },
+  {
+    "id": "case-0099-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.998849630355835,
+    "probabilities": {
+      "low": 0.998849630355835,
+      "moderate": 0.0006558710592798889,
+      "high": 0.0004938419442623854,
+      "critical": 6.861280894554511e-07
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0381-choice",
+    "type": "choice",
+    "label": "automate",
+    "confidence": 0.9982940554618835,
+    "probabilities": {
+      "automate": 0.9982940554618835,
+      "review": 0.0017059182282537222
+    },
+    "target": "automate"
+  },
+  {
+    "id": "case-0381-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9994232654571533,
+    "probabilities": {
+      "false": 0.9994232654571533,
+      "true": 0.0005767800030298531
+    },
+    "target": false
+  },
+  {
+    "id": "case-0381-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.9987999200820923,
+    "probabilities": {
+      "low": 0.9987999200820923,
+      "moderate": 0.000781720969825983,
+      "high": 0.000417599017964676,
+      "critical": 8.172726211341796e-07
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0192-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9990390539169312,
+    "probabilities": {
+      "review": 0.9990390539169312,
+      "automate": 0.0009609381668269634
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0192-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9995211362838745,
+    "probabilities": {
+      "false": 0.9995211362838745,
+      "true": 0.00047883918159641325
+    },
+    "target": false
+  },
+  {
+    "id": "case-0192-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.9965947270393372,
+    "probabilities": {
+      "low": 0.003222262253984809,
+      "moderate": 0.9965947270393372,
+      "high": 0.0001786677457857877,
+      "critical": 4.3077502596133854e-06
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0105-choice",
+    "type": "choice",
+    "label": "automate",
+    "confidence": 0.9987958669662476,
+    "probabilities": {
+      "automate": 0.9987958669662476,
+      "review": 0.0012041028821840882
+    },
+    "target": "automate"
+  },
+  {
+    "id": "case-0105-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9993833303451538,
+    "probabilities": {
+      "false": 0.9993833303451538,
+      "true": 0.000616670586168766
+    },
+    "target": false
+  },
+  {
+    "id": "case-0105-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.9990153312683105,
+    "probabilities": {
+      "low": 0.9990153312683105,
+      "moderate": 0.0005826440174132586,
+      "high": 0.0004013872821815312,
+      "critical": 6.902212703607802e-07
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0185-choice",
+    "type": "choice",
+    "label": "automate",
+    "confidence": 0.9985815286636353,
+    "probabilities": {
+      "automate": 0.9985815286636353,
+      "review": 0.0014184470055624843
+    },
+    "target": "automate"
+  },
+  {
+    "id": "case-0185-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9993170499801636,
+    "probabilities": {
+      "false": 0.9993170499801636,
+      "true": 0.0006829104386270046
+    },
+    "target": false
+  },
+  {
+    "id": "case-0185-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.999083399772644,
+    "probabilities": {
+      "low": 0.999083399772644,
+      "moderate": 0.0005353327724151313,
+      "high": 0.00038052027230151,
+      "critical": 6.894446755723038e-07
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0315-choice",
+    "type": "choice",
+    "label": "automate",
+    "confidence": 0.9983271956443787,
+    "probabilities": {
+      "automate": 0.9983271956443787,
+      "review": 0.0016728282207623124
+    },
+    "target": "automate"
+  },
+  {
+    "id": "case-0315-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9994149208068848,
+    "probabilities": {
+      "false": 0.9994149208068848,
+      "true": 0.0005851449677720666
+    },
+    "target": false
+  },
+  {
+    "id": "case-0315-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.9984862208366394,
+    "probabilities": {
+      "low": 0.9984862208366394,
+      "moderate": 0.0009485205519013107,
+      "high": 0.0005643289186991751,
+      "critical": 9.312363999924855e-07
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0120-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9997664093971252,
+    "probabilities": {
+      "automate": 0.0002336291945539415,
+      "review": 0.9997664093971252
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0120-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9997430443763733,
+    "probabilities": {
+      "false": 0.00025694616488181055,
+      "true": 0.9997430443763733
+    },
+    "target": true
+  },
+  {
+    "id": "case-0120-score",
+    "type": "score",
+    "label": "high",
+    "confidence": 0.9964609742164612,
+    "probabilities": {
+      "low": 0.002564967842772603,
+      "moderate": 0.00026781874476000667,
+      "high": 0.9964609742164612,
+      "critical": 0.0007062092190608382
+    },
+    "target": 2
+  },
+  {
+    "id": "case-0553-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9987890124320984,
+    "probabilities": {
+      "automate": 0.0012109862873330712,
+      "review": 0.9987890124320984
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0553-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9988371729850769,
+    "probabilities": {
+      "false": 0.001162849017418921,
+      "true": 0.9988371729850769
+    },
+    "target": true
+  },
+  {
+    "id": "case-0553-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.9954565763473511,
+    "probabilities": {
+      "low": 0.9954565763473511,
+      "moderate": 0.0015622928040102124,
+      "high": 0.0023802295327186584,
+      "critical": 0.000600953702814877
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0147-choice",
+    "type": "choice",
+    "label": "automate",
+    "confidence": 0.9986770749092102,
+    "probabilities": {
+      "automate": 0.9986770749092102,
+      "review": 0.0013228427851572633
+    },
+    "target": "automate"
+  },
+  {
+    "id": "case-0147-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.999483585357666,
+    "probabilities": {
+      "false": 0.999483585357666,
+      "true": 0.0005164201720617712
+    },
+    "target": false
+  },
+  {
+    "id": "case-0147-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.9984710812568665,
+    "probabilities": {
+      "low": 0.9984710812568665,
+      "moderate": 0.0009525378118269145,
+      "high": 0.0005754654412157834,
+      "critical": 8.503152457706165e-07
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0429-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 1.0,
+    "probabilities": {
+      "automate": 4.05200424324903e-08,
+      "review": 1.0
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0429-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 1.0,
+    "probabilities": {
+      "false": 1.994366449764584e-08,
+      "true": 1.0
+    },
+    "target": true
+  },
+  {
+    "id": "case-0429-score",
+    "type": "score",
+    "label": "critical",
+    "confidence": 0.9947460889816284,
+    "probabilities": {
+      "low": 0.0005026051076129079,
+      "moderate": 0.0010836865985766053,
+      "high": 0.003667594399303198,
+      "critical": 0.9947460889816284
+    },
+    "target": 3
+  },
+  {
+    "id": "case-0296-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9991932511329651,
+    "probabilities": {
+      "review": 0.9991932511329651,
+      "automate": 0.0008067056187428534
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0296-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9995843768119812,
+    "probabilities": {
+      "false": 0.9995843768119812,
+      "true": 0.00041566212894394994
+    },
+    "target": false
+  },
+  {
+    "id": "case-0296-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.9976890087127686,
+    "probabilities": {
+      "low": 0.002156592207029462,
+      "moderate": 0.9976890087127686,
+      "high": 0.00015108866500668228,
+      "critical": 3.325927536934614e-06
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0136-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9995439648628235,
+    "probabilities": {
+      "review": 0.9995439648628235,
+      "automate": 0.0004559506487566978
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0136-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9994320273399353,
+    "probabilities": {
+      "false": 0.9994320273399353,
+      "true": 0.0005679178866557777
+    },
+    "target": false
+  },
+  {
+    "id": "case-0136-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.9988951086997986,
+    "probabilities": {
+      "low": 0.0009964159689843655,
+      "moderate": 0.9988951086997986,
+      "high": 0.00010626015136949718,
+      "critical": 2.2751844426238677e-06
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0570-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9999995231628418,
+    "probabilities": {
+      "automate": 4.5420387095873593e-07,
+      "review": 0.9999995231628418
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0570-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9991983771324158,
+    "probabilities": {
+      "false": 0.0008016698993742466,
+      "true": 0.9991983771324158
+    },
+    "target": true
+  },
+  {
+    "id": "case-0570-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.9979057312011719,
+    "probabilities": {
+      "low": 0.0016897565219551325,
+      "moderate": 0.9979057312011719,
+      "high": 5.3086587286088616e-05,
+      "critical": 0.0003514056734275073
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0047-choice",
+    "type": "choice",
+    "label": "automate",
+    "confidence": 0.998837411403656,
+    "probabilities": {
+      "automate": 0.998837411403656,
+      "review": 0.001162589294835925
+    },
+    "target": "automate"
+  },
+  {
+    "id": "case-0047-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9994912147521973,
+    "probabilities": {
+      "false": 0.9994912147521973,
+      "true": 0.0005087242461740971
+    },
+    "target": false
+  },
+  {
+    "id": "case-0047-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.9986597299575806,
+    "probabilities": {
+      "low": 0.9986597299575806,
+      "moderate": 0.0007589533925056458,
+      "high": 0.0005805278779007494,
+      "critical": 7.992720725269464e-07
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0226-choice",
+    "type": "choice",
+    "label": "automate",
+    "confidence": 0.9986214637756348,
+    "probabilities": {
+      "automate": 0.9986214637756348,
+      "review": 0.0013785475166514516
+    },
+    "target": "automate"
+  },
+  {
+    "id": "case-0226-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9993137121200562,
+    "probabilities": {
+      "false": 0.9993137121200562,
+      "true": 0.0006862960872240365
+    },
+    "target": false
+  },
+  {
+    "id": "case-0226-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.9988372921943665,
+    "probabilities": {
+      "low": 0.9988372921943665,
+      "moderate": 0.0006480401498265564,
+      "high": 0.0005138609558343887,
+      "critical": 7.815252729415079e-07
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0050-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9999996423721313,
+    "probabilities": {
+      "automate": 3.8927038303882e-07,
+      "review": 0.9999996423721313
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0050-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9993557333946228,
+    "probabilities": {
+      "false": 0.0006442664889618754,
+      "true": 0.9993557333946228
+    },
+    "target": true
+  },
+  {
+    "id": "case-0050-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.9986155033111572,
+    "probabilities": {
+      "low": 0.0010413797572255135,
+      "moderate": 0.9986155033111572,
+      "high": 5.402401075116359e-05,
+      "critical": 0.00028902949998155236
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0406-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 1.0,
+    "probabilities": {
+      "automate": 5.6307388973664274e-08,
+      "review": 1.0
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0406-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 1.0,
+    "probabilities": {
+      "false": 2.0999841865432245e-08,
+      "true": 1.0
+    },
+    "target": true
+  },
+  {
+    "id": "case-0406-score",
+    "type": "score",
+    "label": "critical",
+    "confidence": 0.9952818751335144,
+    "probabilities": {
+      "low": 0.0007096662884578109,
+      "moderate": 0.001022209762595594,
+      "high": 0.002986217150464654,
+      "critical": 0.9952818751335144
+    },
+    "target": 3
+  },
+  {
+    "id": "case-0063-choice",
+    "type": "choice",
+    "label": "automate",
+    "confidence": 0.9988892674446106,
+    "probabilities": {
+      "automate": 0.9988892674446106,
+      "review": 0.0011107642203569412
+    },
+    "target": "automate"
+  },
+  {
+    "id": "case-0063-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9994181394577026,
+    "probabilities": {
+      "false": 0.9994181394577026,
+      "true": 0.000581833126489073
+    },
+    "target": false
+  },
+  {
+    "id": "case-0063-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.9989111423492432,
+    "probabilities": {
+      "low": 0.9989111423492432,
+      "moderate": 0.0006358211394399405,
+      "high": 0.0004524107789620757,
+      "critical": 7.120080454114941e-07
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0228-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9998133778572083,
+    "probabilities": {
+      "review": 0.9998133778572083,
+      "automate": 0.00018668053962755948
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0228-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9997796416282654,
+    "probabilities": {
+      "false": 0.00022035703295841813,
+      "true": 0.9997796416282654
+    },
+    "target": true
+  },
+  {
+    "id": "case-0228-score",
+    "type": "score",
+    "label": "high",
+    "confidence": 0.9960082769393921,
+    "probabilities": {
+      "low": 0.002739305142313242,
+      "moderate": 0.0003629071870818734,
+      "high": 0.9960082769393921,
+      "critical": 0.0008895380306057632
+    },
+    "target": 2
+  },
+  {
+    "id": "case-0126-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9997679591178894,
+    "probabilities": {
+      "automate": 0.00023202685406431556,
+      "review": 0.9997679591178894
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0126-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9997703433036804,
+    "probabilities": {
+      "false": 0.0002296141756232828,
+      "true": 0.9997703433036804
+    },
+    "target": true
+  },
+  {
+    "id": "case-0126-score",
+    "type": "score",
+    "label": "high",
+    "confidence": 0.9962918758392334,
+    "probabilities": {
+      "low": 0.0026896903291344643,
+      "moderate": 0.0002589688228908926,
+      "high": 0.9962918758392334,
+      "critical": 0.0007594130001962185
+    },
+    "target": 2
+  },
+  {
+    "id": "case-0060-choice",
+    "type": "choice",
+    "label": "automate",
+    "confidence": 0.9985997080802917,
+    "probabilities": {
+      "review": 0.0014002928510308266,
+      "automate": 0.9985997080802917
+    },
+    "target": "automate"
+  },
+  {
+    "id": "case-0060-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9992808699607849,
+    "probabilities": {
+      "false": 0.9992808699607849,
+      "true": 0.0007190931937657297
+    },
+    "target": false
+  },
+  {
+    "id": "case-0060-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.9988362193107605,
+    "probabilities": {
+      "low": 0.9988362193107605,
+      "moderate": 0.0006425017490983009,
+      "high": 0.000520422647241503,
+      "critical": 8.019935080483265e-07
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0434-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9990441203117371,
+    "probabilities": {
+      "review": 0.9990441203117371,
+      "automate": 0.0009558703750371933
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0434-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9988203644752502,
+    "probabilities": {
+      "false": 0.0011796014150604606,
+      "true": 0.9988203644752502
+    },
+    "target": true
+  },
+  {
+    "id": "case-0434-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.9920056462287903,
+    "probabilities": {
+      "low": 0.9920056462287903,
+      "moderate": 0.0026158008258789778,
+      "high": 0.004497552756220102,
+      "critical": 0.0008810283034108579
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0564-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9998512268066406,
+    "probabilities": {
+      "automate": 0.0001487292320234701,
+      "review": 0.9998512268066406
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0564-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9998236298561096,
+    "probabilities": {
+      "false": 0.00017635912809055299,
+      "true": 0.9998236298561096
+    },
+    "target": true
+  },
+  {
+    "id": "case-0564-score",
+    "type": "score",
+    "label": "high",
+    "confidence": 0.9953135251998901,
+    "probabilities": {
+      "low": 0.0031889297533780336,
+      "moderate": 0.00036254565929993987,
+      "high": 0.9953135251998901,
+      "critical": 0.0011349141132086515
+    },
+    "target": 2
+  },
+  {
+    "id": "case-0092-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9994514584541321,
+    "probabilities": {
+      "automate": 0.0005485713481903076,
+      "review": 0.9994514584541321
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0092-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9994243383407593,
+    "probabilities": {
+      "false": 0.9994243383407593,
+      "true": 0.00057567487237975
+    },
+    "target": false
+  },
+  {
+    "id": "case-0092-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.9985485672950745,
+    "probabilities": {
+      "low": 0.0013288704212754965,
+      "moderate": 0.9985485672950745,
+      "high": 0.000119971256935969,
+      "critical": 2.6417737899464555e-06
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0246-choice",
+    "type": "choice",
+    "label": "automate",
+    "confidence": 0.9985200762748718,
+    "probabilities": {
+      "automate": 0.9985200762748718,
+      "review": 0.0014799541095271707
+    },
+    "target": "automate"
+  },
+  {
+    "id": "case-0246-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9994770884513855,
+    "probabilities": {
+      "false": 0.9994770884513855,
+      "true": 0.0005229329108260572
+    },
+    "target": false
+  },
+  {
+    "id": "case-0246-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.99846351146698,
+    "probabilities": {
+      "low": 0.99846351146698,
+      "moderate": 0.000994962640106678,
+      "high": 0.0005405662814155221,
+      "critical": 9.064689834303863e-07
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0071-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9995871186256409,
+    "probabilities": {
+      "automate": 0.0004128669388592243,
+      "review": 0.9995871186256409
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0071-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9993778467178345,
+    "probabilities": {
+      "false": 0.9993778467178345,
+      "true": 0.0006221617222763598
+    },
+    "target": false
+  },
+  {
+    "id": "case-0071-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.9989715814590454,
+    "probabilities": {
+      "low": 0.0009309391025453806,
+      "moderate": 0.9989715814590454,
+      "high": 9.529343515168875e-05,
+      "critical": 2.1540361103689065e-06
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0428-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.999049723148346,
+    "probabilities": {
+      "automate": 0.0009502078755758703,
+      "review": 0.999049723148346
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0428-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9987999200820923,
+    "probabilities": {
+      "false": 0.0012000501155853271,
+      "true": 0.9987999200820923
+    },
+    "target": true
+  },
+  {
+    "id": "case-0428-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.9916666150093079,
+    "probabilities": {
+      "low": 0.9916666150093079,
+      "moderate": 0.0025675049982964993,
+      "high": 0.004880087915807962,
+      "critical": 0.0008858031360432506
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0444-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9998360872268677,
+    "probabilities": {
+      "review": 0.9998360872268677,
+      "automate": 0.00016388719086535275
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0444-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9998353719711304,
+    "probabilities": {
+      "false": 0.00016463224892504513,
+      "true": 0.9998353719711304
+    },
+    "target": true
+  },
+  {
+    "id": "case-0444-score",
+    "type": "score",
+    "label": "high",
+    "confidence": 0.9948163628578186,
+    "probabilities": {
+      "low": 0.0036427408922463655,
+      "moderate": 0.00036078717675991356,
+      "high": 0.9948163628578186,
+      "critical": 0.001180054503493011
+    },
+    "target": 2
+  },
+  {
+    "id": "case-0088-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9995954632759094,
+    "probabilities": {
+      "review": 0.9995954632759094,
+      "automate": 0.00040453937253914773
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0088-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9993745684623718,
+    "probabilities": {
+      "false": 0.9993745684623718,
+      "true": 0.0006253994652070105
+    },
+    "target": false
+  },
+  {
+    "id": "case-0088-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.9989595413208008,
+    "probabilities": {
+      "low": 0.000931951217353344,
+      "moderate": 0.9989595413208008,
+      "high": 0.00010631312761688605,
+      "critical": 2.1469759303727187e-06
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0038-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.999085545539856,
+    "probabilities": {
+      "review": 0.999085545539856,
+      "automate": 0.0009144341456703842
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0038-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9989676475524902,
+    "probabilities": {
+      "false": 0.001032344182021916,
+      "true": 0.9989676475524902
+    },
+    "target": true
+  },
+  {
+    "id": "case-0038-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.9935530424118042,
+    "probabilities": {
+      "low": 0.9935530424118042,
+      "moderate": 0.0022434466518461704,
+      "high": 0.0033807000145316124,
+      "critical": 0.000822853296995163
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0219-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9995344877243042,
+    "probabilities": {
+      "review": 0.9995344877243042,
+      "automate": 0.0004655695229303092
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0219-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9994333386421204,
+    "probabilities": {
+      "false": 0.9994333386421204,
+      "true": 0.0005666488432325423
+    },
+    "target": false
+  },
+  {
+    "id": "case-0219-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.9986791014671326,
+    "probabilities": {
+      "low": 0.0012126598739996552,
+      "moderate": 0.9986791014671326,
+      "high": 0.00010554734035395086,
+      "critical": 2.60539741248067e-06
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0519-choice",
+    "type": "choice",
+    "label": "automate",
+    "confidence": 0.9990020394325256,
+    "probabilities": {
+      "review": 0.000998009229078889,
+      "automate": 0.9990020394325256
+    },
+    "target": "automate"
+  },
+  {
+    "id": "case-0519-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9992097616195679,
+    "probabilities": {
+      "false": 0.9992097616195679,
+      "true": 0.0007902081706561148
+    },
+    "target": false
+  },
+  {
+    "id": "case-0519-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.999377965927124,
+    "probabilities": {
+      "low": 0.999377965927124,
+      "moderate": 0.0003193803131580353,
+      "high": 0.0003021318407263607,
+      "critical": 5.141849896972417e-07
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0059-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.999180257320404,
+    "probabilities": {
+      "review": 0.999180257320404,
+      "automate": 0.0008197012357413769
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0059-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9995449185371399,
+    "probabilities": {
+      "false": 0.9995449185371399,
+      "true": 0.0004550056764855981
+    },
+    "target": false
+  },
+  {
+    "id": "case-0059-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.9976338148117065,
+    "probabilities": {
+      "low": 0.002205902012065053,
+      "moderate": 0.9976338148117065,
+      "high": 0.0001567685103509575,
+      "critical": 3.4671554658416426e-06
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0374-choice",
+    "type": "choice",
+    "label": "automate",
+    "confidence": 0.9984682202339172,
+    "probabilities": {
+      "automate": 0.9984682202339172,
+      "review": 0.0015317702200263739
+    },
+    "target": "automate"
+  },
+  {
+    "id": "case-0374-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9995328187942505,
+    "probabilities": {
+      "false": 0.9995328187942505,
+      "true": 0.0004671989008784294
+    },
+    "target": false
+  },
+  {
+    "id": "case-0374-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.9981484413146973,
+    "probabilities": {
+      "low": 0.9981484413146973,
+      "moderate": 0.00120550359133631,
+      "high": 0.0006450940854847431,
+      "critical": 9.886829275274067e-07
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0096-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 1.0,
+    "probabilities": {
+      "review": 1.0,
+      "automate": 4.600973113610962e-08
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0096-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 1.0,
+    "probabilities": {
+      "false": 2.0820209556404734e-08,
+      "true": 1.0
+    },
+    "target": true
+  },
+  {
+    "id": "case-0096-score",
+    "type": "score",
+    "label": "critical",
+    "confidence": 0.9946770668029785,
+    "probabilities": {
+      "low": 0.0005795801989734173,
+      "moderate": 0.0010357311693951488,
+      "high": 0.003707628231495619,
+      "critical": 0.9946770668029785
+    },
+    "target": 3
+  },
+  {
+    "id": "case-0548-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 1.0,
+    "probabilities": {
+      "automate": 3.24507674065444e-08,
+      "review": 1.0
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0548-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 1.0,
+    "probabilities": {
+      "false": 1.8674617408009908e-08,
+      "true": 1.0
+    },
+    "target": true
+  },
+  {
+    "id": "case-0548-score",
+    "type": "score",
+    "label": "critical",
+    "confidence": 0.9956306219100952,
+    "probabilities": {
+      "low": 0.0004283325688447803,
+      "moderate": 0.0011690735118463635,
+      "high": 0.002771990839391947,
+      "critical": 0.9956306219100952
+    },
+    "target": 3
+  },
+  {
+    "id": "case-0074-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9993528723716736,
+    "probabilities": {
+      "review": 0.9993528723716736,
+      "automate": 0.0006471706437878311
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0074-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9995200634002686,
+    "probabilities": {
+      "false": 0.9995200634002686,
+      "true": 0.00048000161768868566
+    },
+    "target": false
+  },
+  {
+    "id": "case-0074-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.9982398748397827,
+    "probabilities": {
+      "low": 0.0016419650055468082,
+      "moderate": 0.9982398748397827,
+      "high": 0.00011551987699931487,
+      "critical": 2.629306436574552e-06
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0049-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9990360736846924,
+    "probabilities": {
+      "review": 0.9990360736846924,
+      "automate": 0.0009639137424528599
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0049-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9989863038063049,
+    "probabilities": {
+      "false": 0.001013705157674849,
+      "true": 0.9989863038063049
+    },
+    "target": true
+  },
+  {
+    "id": "case-0049-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.9941096305847168,
+    "probabilities": {
+      "low": 0.9941096305847168,
+      "moderate": 0.0018298383802175522,
+      "high": 0.003313175169751048,
+      "critical": 0.0007473016739822924
+    },
+    "target": 0
+  },
+  {
+    "id": "case-0404-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9995588660240173,
+    "probabilities": {
+      "review": 0.9995588660240173,
+      "automate": 0.000441161886556074
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0404-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.999377965927124,
+    "probabilities": {
+      "false": 0.999377965927124,
+      "true": 0.0006219607894308865
+    },
+    "target": false
+  },
+  {
+    "id": "case-0404-score",
+    "type": "score",
+    "label": "moderate",
+    "confidence": 0.9988559484481812,
+    "probabilities": {
+      "low": 0.0010468747932463884,
+      "moderate": 0.9988559484481812,
+      "high": 9.489880903856829e-05,
+      "critical": 2.293835905220476e-06
+    },
+    "target": 1
+  },
+  {
+    "id": "case-0154-choice",
+    "type": "choice",
+    "label": "review",
+    "confidence": 0.9998369216918945,
+    "probabilities": {
+      "review": 0.9998369216918945,
+      "automate": 0.0001630563783692196
+    },
+    "target": "review"
+  },
+  {
+    "id": "case-0154-noul",
+    "type": "noul",
+    "label": "true",
+    "confidence": 0.9998093247413635,
+    "probabilities": {
+      "false": 0.00019066639652010053,
+      "true": 0.9998093247413635
+    },
+    "target": true
+  },
+  {
+    "id": "case-0154-score",
+    "type": "score",
+    "label": "high",
+    "confidence": 0.9961997866630554,
+    "probabilities": {
+      "low": 0.0025519912596791983,
+      "moderate": 0.0003182926739100367,
+      "high": 0.9961997866630554,
+      "critical": 0.0009299360681325197
+    },
+    "target": 2
+  },
+  {
+    "id": "case-0331-choice",
+    "type": "choice",
+    "label": "automate",
+    "confidence": 0.9991793036460876,
+    "probabilities": {
+      "automate": 0.9991793036460876,
+      "review": 0.0008207107312045991
+    },
+    "target": "automate"
+  },
+  {
+    "id": "case-0331-noul",
+    "type": "noul",
+    "label": "false",
+    "confidence": 0.9994223117828369,
+    "probabilities": {
+      "false": 0.9994223117828369,
+      "true": 0.0005776551552116871
+    },
+    "target": false
+  },
+  {
+    "id": "case-0331-score",
+    "type": "score",
+    "label": "low",
+    "confidence": 0.999285876750946,
+    "probabilities": {
+      "low": 0.999285876750946,
+      "moderate": 0.0003727925359271467,
+      "high": 0.00034080122713930905,
+      "critical": 5.224173378337582e-07
+    },
+    "target": 0
+  }
+]

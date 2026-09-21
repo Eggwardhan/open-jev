@@ -39,7 +39,11 @@ class WhitespaceTokenizer:
     @staticmethod
     def _example_text(item: Example) -> str:
         return " ".join(
-            (text(item.state), item.question.instructions, text(item.question.criteria))
+            (
+                text(item.state),
+                item.question.instructions,
+                "false true" if item.question.type == "noul" else text(item.question.criteria),
+            )
         )
 
     def encode(self, value: object) -> list[int]:

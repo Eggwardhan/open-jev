@@ -1,0 +1,7 @@
+{
+  "checksum_files_verified": 10,
+  "source_hash_match": true,
+  "split_isolation_verified": true,
+  "cpu_reload_prediction_count": 180,
+  "cpu_gpu_max_abs_error": 1.3737007975578308e-08
+}

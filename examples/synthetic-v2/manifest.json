@@ -1,0 +1,37 @@
+{
+  "dataset": "synthetic-v2",
+  "seed": 7,
+  "groups": 600,
+  "examples": 1800,
+  "fingerprint": "ae9204577492751f2f04c2c28472ca656c5fabcc929cceb39b041b82b3b02fab",
+  "split_counts": {
+    "train": 1260,
+    "validation": 180,
+    "calibration": 180,
+    "test": 180
+  },
+  "split_fingerprints": {
+    "train": "8911ab543da677ebb1d41edd3b224b0ed1b2a58cc70e8fef4704a0618ec33995",
+    "validation": "38913112bd4987137e195da5b79b5c9bc17854bea8d3964dc6af97cc2c89ae61",
+    "calibration": "4cd0db53b4f4c2e5c0f2b82e7a52265d18cfda368b4c0302f46c29d28bda87c9",
+    "test": "b63a96cd10a972b58223c8aa2e3cfa54d1112e0ec96b16ae665600e5b92abf3d"
+  },
+  "calibration_used": false,
+  "config": {
+    "epochs": 40,
+    "learning_rate": 0.003,
+    "batch_size": 32,
+    "seed": 7,
+    "device": "cuda",
+    "hidden_size": 64
+  },
+  "started_at_utc": "2026-09-21T09:28:21.377532+00:00",
+  "source_sha256": "9ff4e987afb253948f7a7037f70b4826bfe8a2949534f9dd63be61f1938c1bdc",
+  "git_head": null,
+  "environment": {
+    "python": "3.13.9",
+    "torch": "2.7.1+cu128",
+    "cuda": "12.8",
+    "platform": "Linux-5.14.0-284.25.1.el9_2.x86_64-x86_64-with-glibc2.35"
+  }
+}

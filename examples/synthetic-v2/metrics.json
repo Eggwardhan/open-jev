@@ -1,0 +1,69 @@
+{
+  "dataset_fingerprint": "ae9204577492751f2f04c2c28472ca656c5fabcc929cceb39b041b82b3b02fab",
+  "train_examples": 1260,
+  "validation_examples": 180,
+  "calibration_examples": 180,
+  "test_examples": 180,
+  "test_accuracy": 1.0,
+  "test_nll": 0.0013154603075236082,
+  "test_brier": 6.725937964802142e-06,
+  "test_ece": 0.001313328742980957,
+  "untrained": {
+    "count": 180,
+    "accuracy": 0.4166666567325592,
+    "nll": 0.949261486530304,
+    "brier": 0.5983796715736389,
+    "ece": 0.09208457943055759
+  },
+  "majority_baseline": {
+    "accuracy": 0.5222222222222223,
+    "by_type": {
+      "choice": {
+        "label": "review",
+        "count": 60,
+        "accuracy": 0.7333333333333333
+      },
+      "noul": {
+        "label": true,
+        "count": 60,
+        "accuracy": 0.5166666666666667
+      },
+      "score": {
+        "label": 1,
+        "count": 60,
+        "accuracy": 0.31666666666666665
+      }
+    }
+  },
+  "by_type": {
+    "choice": {
+      "count": 60,
+      "accuracy": 1.0,
+      "nll": 0.0005997093976475298,
+      "brier": 1.2991264384254464e-06,
+      "ece": 0.0005994439125061035
+    },
+    "noul": {
+      "count": 60,
+      "accuracy": 1.0,
+      "nll": 0.0004913914599455893,
+      "brier": 6.74276918743999e-07,
+      "ece": 0.0004912018775939941
+    },
+    "score": {
+      "count": 60,
+      "accuracy": 1.0,
+      "nll": 0.0028552806470543146,
+      "brier": 1.8204411389888264e-05,
+      "ece": 0.002849280834197998,
+      "score_mae": 0.0037567745037184372
+    }
+  },
+  "device": "cuda",
+  "gpu_name": "NVIDIA H800",
+  "peak_allocated_bytes": 75869184,
+  "parameter_count": 12225,
+  "training_seconds": 24.933961387723684,
+  "selected_epoch": 40,
+  "reload_max_abs_error": 0.0
+}

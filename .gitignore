@@ -12,3 +12,6 @@ data/
 !.env.example
 *.pt
 *.safetensors
+
+# The published demo checkpoint is only about 52 KB.
+!examples/synthetic-v2/model.pt

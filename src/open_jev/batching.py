@@ -7,13 +7,20 @@ from .schema import Example
 from .tokenization import WhitespaceTokenizer, text
 
 
+def candidate_labels(example: Example) -> list[str]:
+    q = example.question
+    if q.type == "choice":
+        return list(q.criteria)
+    if q.type == "noul":
+        return ["false", "true"]
+    return [text(level) for level in q.criteria]
+
+
 def candidates(example: Example) -> list[str]:
     q = example.question
     if q.type == "choice":
         return [f"{key}: {value}" for key, value in q.criteria.items()]
-    if q.type == "noul":
-        return ["false", "true"]
-    return [text(level) for level in q.criteria]
+    return candidate_labels(example)
 
 
 @dataclass
@@ -44,6 +51,4 @@ def collate(examples: list[Example], tokenizer: WhitespaceTokenizer) -> Batch:
             cand[i, j, : len(ids)] = torch.tensor(ids)
         target[i, : len(e.target())] = torch.tensor(e.target())
         mask[i, : len(encoded_candidates[i])] = True
-    return Batch(
-        state, cand, target, mask, [[c for c in candidates(e)] for e in examples], examples
-    )
+    return Batch(state, cand, target, mask, [candidate_labels(e) for e in examples], examples)
