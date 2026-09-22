@@ -34,5 +34,9 @@ def readout_single_token(
     result = model(input_ids)
     logits = result.logits if hasattr(result, "logits") else result[0]
     scores = logits[0, -1, torch.tensor([ids[0] for ids in token_ids], device=logits.device)]
+    # CPU inference often keeps Qwen checkpoints in bf16/fp16.  Promote the
+    # small candidate slice before softmax so returned probabilities remain a
+    # normalized distribution instead of inheriting low-precision rounding.
+    scores = scores.float()
     probs = scores.softmax(-1).tolist()
     return dict(zip(options, (float(p) for p in probs), strict=True))

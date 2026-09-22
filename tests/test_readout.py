@@ -21,6 +21,17 @@ def test_single_token_readout():
     assert set(out) == {"A", "B"} and abs(sum(out.values()) - 1) < 1e-6
 
 
+def test_single_token_readout_normalizes_low_precision_logits():
+    class LowPrecisionModel(Model):
+        def __call__(self, x):
+            result = super().__call__(x)
+            result.logits = result.logits.to(torch.bfloat16)
+            return result
+
+    out = readout_single_token(LowPrecisionModel(), Tok(), "x", ["A", "B"])
+    assert abs(sum(out.values()) - 1) < 1e-6
+
+
 def test_rejects_multitoken():
     class T(Tok):
         def encode(self, text, **kwargs):
