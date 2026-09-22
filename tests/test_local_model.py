@@ -45,3 +45,18 @@ def test_auto_device_resolves_for_injected_model():
     question = Question(type="choice", instructions="route", criteria={"a": "A", "b": "B"})
     result = LocalDecisionModel(FakeModel(), FakeTokenizer(), device="auto").decide("x", question)
     assert result["label"] == "a"
+
+
+def test_chat_template_is_used_when_available():
+    called = []
+
+    class ChatTokenizer(FakeTokenizer):
+        def apply_chat_template(self, messages, **kwargs):
+            called.append(kwargs.get("add_generation_prompt"))
+            return "CHAT_TEMPLATE"
+
+    question = Question(type="choice", instructions="route", criteria={"a": "A", "b": "B"})
+    model = LocalDecisionModel(FakeModel(), ChatTokenizer())
+    result = model.decide("x", question)
+    assert result["label"] == "a"
+    assert called == [True]

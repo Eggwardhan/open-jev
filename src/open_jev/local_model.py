@@ -90,6 +90,21 @@ class LocalDecisionModel:
         model.eval()
         return cls(model, tokenizer, model_id=model_id, device=device)
 
+    def _render_prompt(
+        self, state: str | Mapping[str, Any] | Sequence[Any], question: Question
+    ) -> str:
+        if hasattr(self.tokenizer, "apply_chat_template"):
+            messages = [{"role": "user", "content": build_decision_prompt(state, question)}]
+            try:
+                return self.tokenizer.apply_chat_template(
+                    messages, tokenize=False, add_generation_prompt=True, enable_thinking=False
+                )
+            except TypeError:
+                return self.tokenizer.apply_chat_template(
+                    messages, tokenize=False, add_generation_prompt=True
+                )
+        return build_decision_prompt(state, question)
+
     def _labels(self, question: Question) -> tuple[list[str], list[str]]:
         options = _options(question)
         labels = [chr(65 + i) for i in range(len(options))]
@@ -100,7 +115,7 @@ class LocalDecisionModel:
         self, state: str | Mapping[str, Any] | Sequence[Any], question: Question
     ) -> dict[str, Any]:
         labels, keys = self._labels(question)
-        prompt = build_decision_prompt(state, question)
+        prompt = self._render_prompt(state, question)
         import torch
 
         readout_device = self.device
