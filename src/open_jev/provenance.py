@@ -99,4 +99,3 @@ def validate_receipt(receipt: Mapping[str, Any], root: str | Path) -> list[str]:
         if expected_size is not None and path.stat().st_size != expected_size:
             errors.append(f"{name}: size mismatch")
     return errors
-
