@@ -1,70 +1,116 @@
 # open-jev
 
-An independent, modular PyTorch framework for typed decision models. It turns a state plus a typed question into a probability distribution over dynamic candidates, with replaceable tokenizers, encoders, scoring heads, training loops, metrics, and HTTP serving.
+> **Typed, calibrated decisions for AI agents.**
 
-`open-jev` is **not** TypeSafe's Jev model and does not claim to reproduce its private architecture, weights, or training data. It is an open implementation inspired by the public problem shape: calibrated decisions over Choice, Noul, and Score questions. See the [TypeSafe introduction](https://docs.typesafe.ai/introduction) for the hosted product.
+open-jev is an open-source PyTorch decision layer for agent routing, tool
+selection, RAG checks, and evaluation. It turns a state, a typed question, and
+a dynamic candidate set into probabilities, evidence, and replayable outputs.
+
+[![CI](https://github.com/Eggwardhan/open-jev/actions/workflows/ci.yml/badge.svg)](https://github.com/Eggwardhan/open-jev/actions/workflows/ci.yml)
+![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.6%2B-ee4c2c)
+![License](https://img.shields.io/badge/license-Apache--2.0-green)
+
+## Why open-jev?
+
+- **Typed decisions** over dynamic candidate sets
+- **Calibrated probabilities** instead of unqualified labels
+- **Auditable runs** with provenance, evidence, and replay keys
+- **Replaceable components** for tokenizers, encoders, and scoring heads
+- **Reproducible evaluation** across accuracy, calibration, latency, and cost
 
 ## Quick start
 
 ```bash
-python -m venv .venv && source .venv/bin/activate
+python -m venv .venv
+source .venv/bin/activate
 pip install -e '.[dev]'
-pytest
+pytest -q
 ```
 
-## Run an actual training experiment
+Run the included deterministic training experiment:
 
 ```bash
 open-jev train-synthetic --output artifacts/my-run \
   --groups 600 --epochs 40 --batch-size 32 --seed 7 --device auto
 ```
 
-Use `--device cuda` to require CUDA (fails if unavailable), or `--device cpu`.
-The source-checkout equivalent is `PYTHONPATH=src python scripts/train_synthetic.py`
-with the same arguments. The runner creates four JSONL splits, per-epoch logs,
-a self-describing checkpoint, held-out predictions and metrics, hashes, and
-hardware evidence. It restores the best validation checkpoint before evaluation.
+Use `--device cuda` to require CUDA or `--device cpu` to run locally. The
+runner writes grouped JSONL splits, per-epoch logs, a checkpoint, held-out
+predictions, metrics, hashes, and hardware evidence.
 
-A complete [recorded H800 run](examples/synthetic-v2/README.md), including data
-and weights, is checked in. Across 180 held-out rows, the initialized model
-achieved **41.7%** accuracy, a train-majority baseline **52.2%**, and the trained
-model **100%** after 40 epochs (9.6 seconds). This is a simple synthetic rule
-learning demonstration with 12,225 parameters, not evidence of real-world or
-TypeSafe Jev parity. The reserved calibration split is unused.
-
-![Actual H800 training curves](examples/synthetic-v2/curves.png)
-
-[中文训练报告](docs/reports/2026-09-21-h800-synthetic.md)
-
-The core API is deliberately small:
+## Ten-line decision contract
 
 ```python
 from open_jev import Example, Question
-from open_jev.batching import collate
-from open_jev.tokenization import WhitespaceTokenizer
 from open_jev.model import DynamicDecisionModel
+from open_jev.tokenization import WhitespaceTokenizer
 
-question = Question(type="choice", instructions="Choose a route", criteria={"safe": "low risk", "fast": "low latency"})
-example = Example(id="1", state={"latency_ms": 120}, question=question, label="safe")
+question = Question(
+    type="choice",
+    instructions="Choose the safest tool",
+    criteria={
+        "search": "read-only web lookup",
+        "shell": "local command execution",
+        "human": "ask the user first",
+    },
+)
+example = Example(
+    id="demo-1",
+    state={"request": "Inspect a public documentation page"},
+    question=question,
+    label="search",
+)
 tokenizer = WhitespaceTokenizer.fit([example])
 model = DynamicDecisionModel(len(tokenizer), hidden_size=64)
 ```
 
-JSONL examples are validated with Pydantic and preserve `id`, `group`, `source`, and raw `state` for auditability. Splitting isolates groups and identical states before training. Calibration data is kept separate from model fitting.
+The same typed contract supports `Choice`, `Noul`, and `Score` questions. JSONL
+examples preserve `id`, `group`, `source`, and raw `state` for auditability;
+grouped splitting prevents identical states from leaking across evaluation
+partitions.
+
+## What it is good for
+
+- Agent route and skill selection
+- Tool and action pre-checks
+- RAG relevance and evidence checks
+- Typed evaluation signals
+- Risk triage before deterministic policy enforcement
 
 ## Architecture
 
 ```text
 JSONL -> schema -> grouped split -> tokenizer -> encoder -> dynamic scorer
-                                             |-> soft CE / Brier / ECE
+                                             |-> calibration / audits
+                                             |-> benchmark / replay / evidence
                                              |-> checkpoint -> FastAPI
 ```
 
-The included baseline uses a deterministic whitespace tokenizer, mean pooled embeddings, and a permutation-equivariant candidate scorer. Each part can be replaced without changing the typed data contract. A future `hf` extra is reserved for Hugging Face tokenizers and backbones; the base package does not download model weights.
+The default baseline uses a deterministic whitespace tokenizer, mean-pooled
+embeddings, and a permutation-equivariant candidate scorer. The package also
+includes provenance receipts, cross-fit temperature calibration, option-order
+audits, benchmark reports, direct-logit readout contracts, TorchScript export,
+evidence references, and replay keys.
 
-## Scope and limitations
+## Reproducible results
 
-This repository is a clean, runnable baseline rather than a proprietary-model reproduction. The included synthetic checkpoint is only a pipeline demonstration. No pretrained language model or TypeSafe parity is provided, and domain calibration requires representative held-out data. Before production use, add task-specific data governance, adversarial tests, monitoring, access control, and temperature calibration.
+The checked-in [synthetic-v2 run](examples/synthetic-v2/README.md) is a pipeline
+smoke test, not evidence of real-world or TypeSafe Jev parity. Its 180 held-out
+rows reached 100% accuracy after 40 epochs on a synthetic rule-learning task.
+Use the runner with representative labeled data before drawing product or model
+conclusions. Report accuracy, calibration, latency, and cost separately.
+
+See the [中文训练报告](docs/reports/2026-09-21-h800-synthetic.md) and the
+[20-repository integration audit](docs/research/2026-09-22-openjev-20-repo-audit.md).
+
+## What it is not
+
+open-jev is an independent open implementation. It does not reproduce
+TypeSafe Jev's private architecture, weights, or training data. It is a modular
+research and engineering baseline, not a drop-in safety boundary: deterministic
+permissions, sandboxing, human confirmation, and domain-specific validation
+remain necessary for consequential actions.
 
 ## Development
 
@@ -73,47 +119,10 @@ ruff check src tests scripts
 pytest -q
 ```
 
+Contributions should include focused tests and a reproducible example when they
+add a new decision primitive or evaluation path. Read [Contributing](CONTRIBUTING.md)
+and [Citation](CITATION.cff) before publishing results. See the
+[20-repository audit](docs/research/2026-09-22-openjev-20-repo-audit.md) for the
+source and adaptation record behind the integrated modules.
+
 Licensed under Apache-2.0.
-
-## Integration provenance: 20 related repositories
-
-The table below records the design source for each integrated or explicitly
-rejected idea. The implementation in this repository is original and does not
-copy private weights, training data, or source code from these projects.
-
-| Source repository | Design reviewed | Local result |
-|---|---|---|
-| [jaredpalmer/kev](https://github.com/jaredpalmer/kev) | frozen splits, calibration and experiment receipts | `provenance.py`, `calibration.py`; adapted |
-| [TheoLeeCJ/SemIf](https://github.com/TheoLeeCJ/SemIf) | direct option-logit readout and shared/separate comparisons | `readout.py`; adapted as an optional protocol |
-| [featherless-ai/simple-jev](https://github.com/featherless-ai/simple-jev) | versioned prompts and typed response validation | schema and readout contracts; adapted |
-| [daseinlabs/open-jev](https://github.com/daseinlabs/open-jev) | frozen feature metadata and context-shuffle control | `audits.py`; adapted |
-| [wfzyx/von](https://github.com/wfzyx/von) | backend-independent candidate axis | existing dynamic scorer; retained |
-| [Heman10x-NGU/openJev-verdict-2.0](https://github.com/Heman10x-NGU/openJev-verdict-2.0) | permutation robustness and calibration artifacts | `audits.py`, `calibration.py`; adapted; weights not copied |
-| [ikermoel/open-alternative-jev](https://github.com/ikermoel/open-alternative-jev) | packed prompts and temperature scaling | `calibration.py`; adapted |
-| [razorback16/openjev](https://github.com/razorback16/openjev) | typed service and backend separation | `serve.py` boundary; reference only |
-| [ekzhang/openjev-sglang](https://github.com/ekzhang/openjev-sglang) | latency, usage and branch-level failure reporting | `benchmark.py`; adapted |
-| [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench) | separate accuracy, calibration, speed and cost axes | `benchmark.py`; adapted |
-| [receptron/laya](https://github.com/receptron/laya) | export and sequence validation contracts | `export.py`; adapted; ONNX remains optional |
-| [nico-martin/open-jev](https://github.com/nico-martin/open-jev) | typed question and unique-option validation | schema/readout validation; adapted |
-| [kyegomez/open-jev](https://github.com/kyegomez/open-jev) | shared state encoder and typed heads | existing model architecture; design reference |
-| [intikhab49/open-jev-typed-decision-engine](https://github.com/intikhab49/open-jev-typed-decision-engine) | separated train/calibrate/evaluate/export stages | runner plus `calibration.py`/`export.py`; adapted |
-| [kshetrajna12/reflex](https://github.com/kshetrajna12/reflex) | option-order and packed-inference audits | `audits.py`; adapted |
-| [deepanwadhwa/OpenDecision](https://github.com/deepanwadhwa/OpenDecision) | evidence references alongside decisions | `evidence.py`; adapted |
-| [IamBusy/OpenJev-Vision](https://github.com/IamBusy/OpenJev-Vision) | branch-cache keys and replayable experiments | `replay.py`; adapted without image dependency |
-| [SAGAR-TAMANG/sarvam-jev](https://github.com/SAGAR-TAMANG/sarvam-jev) | prompt parity and shared-input identity | provenance/replay keys; adapted |
-| [mithalouni/system-one-open](https://github.com/mithalouni/system-one-open) | separated training/evaluation reports | `benchmark.py`; adapted |
-| [logicrw/awesome-jev-projects](https://github.com/logicrw/awesome-jev-projects) | source review, receipts and exclusion records | this section and `docs/research/2026-09-22-openjev-20-repo-audit.md` |
-
-For the code-level review, license notes, and keep/adapt/reject decisions, see
-[`docs/research/2026-09-22-openjev-20-repo-audit.md`](docs/research/2026-09-22-openjev-20-repo-audit.md).
-
-### Sequential integration commits
-
-The additions were landed independently so each source-derived capability can be
-reviewed or reverted without mixing model code and documentation:
-
-- `e680606` — provenance receipts and source/environment hashes
-- `e2a5c88` — calibration, robustness audits, benchmark contract, direct-logit readout
-- `759f9c9` — TorchScript export, evidence references, replay receipts
-- `826418c` — replay/evidence metadata in `/v1/decide`
-- `f30240c` — cross-fit calibration and named baseline comparison

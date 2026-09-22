@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If open-jev helps your research or product, please cite it."
+title: "open-jev: Typed, calibrated decisions for AI agents"
+type: software
+abstract: >-
+  An open-source PyTorch decision layer for typed choices, calibrated
+  probabilities, benchmarks, replay, and evidence in AI agent workflows.
+repository-code: "https://github.com/Eggwardhan/open-jev"
+license: Apache-2.0
+authors:
+  - family-names: Han
+    given-names: Eggward
+keywords:
+  - AI agents
+  - decision models
+  - calibration
+  - PyTorch
+  - evaluation
