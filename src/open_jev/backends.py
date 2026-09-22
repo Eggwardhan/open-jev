@@ -40,9 +40,9 @@ BACKENDS: dict[str, BackendSpec] = {
     ),
     "Qwen/Qwen3.6-35B-A3B": BackendSpec(
         "Qwen/Qwen3.6-35B-A3B",
-        BackendKind.CAUSAL,
+        BackendKind.SGLANG,
         "ekzhang/openjev-sglang",
-        "SGLang-compatible open model",
+        "local SGLang open model",
     ),
     "heman10x/rlcd-modernbert-151m": BackendSpec(
         "heman10x/rlcd-modernbert-151m",
