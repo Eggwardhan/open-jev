@@ -18,6 +18,7 @@ from .batching import candidate_labels
 from .data import dataset_fingerprint, split_examples, write_jsonl
 from .metrics import accuracy, brier_score, expected_calibration_error
 from .model import DynamicDecisionModel
+from .provenance import build_receipt
 from .schema import Example
 from .synthetic import generate_synthetic_dataset
 from .tokenization import WhitespaceTokenizer
@@ -88,6 +89,7 @@ def run_synthetic_training(
     splits = split_examples(rows, seed=seed)
     for name, values in splits.items():
         write_jsonl(values, output / f"{name}.jsonl")
+    split_files = [output / f"{name}.jsonl" for name in splits]
     config = TrainingConfig(
         epochs=epochs, seed=seed, device=device, batch_size=batch_size, learning_rate=learning_rate
     )
@@ -117,6 +119,17 @@ def run_synthetic_training(
         "config": {**asdict(config), "hidden_size": hidden_size},
         "started_at_utc": started,
         "source_sha256": source_sha256,
+        "file_receipt": build_receipt(
+            root=output,
+            files=split_files,
+            sources=[
+                {
+                    "name": "open-jev synthetic-v2",
+                    "url": "https://github.com/Eggwardhan/open-jev",
+                    "role": "auditable training fixture",
+                }
+            ],
+        ),
         "git_head": git.stdout.strip() if git.returncode == 0 else None,
         "environment": {
             "python": platform.python_version(),
