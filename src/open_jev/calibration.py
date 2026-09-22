@@ -62,3 +62,16 @@ def report(probabilities: Tensor, target: Tensor) -> dict[str, float]:
         "brier": brier(probabilities, target),
         "ece": ece(probabilities, target),
     }
+
+
+def cross_fit(logits: Tensor, target: Tensor, *, folds: int = 5) -> Tensor:
+    """Return out-of-fold calibrated probabilities without fitting on each row."""
+    if folds < 2 or folds > len(logits):
+        raise ValueError("folds must be between 2 and the number of rows")
+    result = torch.empty_like(logits)
+    for fold in range(folds):
+        held_out = torch.arange(len(logits), device=logits.device) % folds == fold
+        fit = ~held_out
+        scaler = TemperatureScaler.fit(logits[fit], target[fit])
+        result[held_out] = scaler.transform(logits[held_out])
+    return result

@@ -64,3 +64,8 @@ def save_report(
     Path(path).write_text(
         json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
+
+
+def compare_results(results: dict[str, dict[str, float]]) -> dict[str, dict[str, float]]:
+    """Preserve named model/baseline metrics for side-by-side reporting."""
+    return {name: dict(metrics) for name, metrics in results.items()}

@@ -8,3 +8,10 @@ def test_benchmark_records_latency_and_writes_report(tmp_path):
     path = tmp_path / "report.json"
     save_report(path, [result])
     assert json.loads(path.read_text())["results"][0]["name"] == "toy"
+
+
+def test_compare_baselines_keeps_dimensions():
+    from open_jev.benchmark import compare_results
+
+    result = compare_results({"jev": {"accuracy": 0.8}, "baseline": {"accuracy": 0.7}})
+    assert result["jev"]["accuracy"] == 0.8 and result["baseline"]["accuracy"] == 0.7
