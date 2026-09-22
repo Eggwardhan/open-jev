@@ -5,12 +5,14 @@ from pydantic import BaseModel
 
 from .schema import Example, Question
 from .training import Trainer
+from .replay import replay_key
 
 
 class DecisionRequest(BaseModel):
     id: str = "request"
     state: str | dict | list
     question: Question
+    evidence: list[dict[str, object]] = []
 
 
 def create_app(trainer: Trainer) -> FastAPI:
@@ -28,6 +30,9 @@ def create_app(trainer: Trainer) -> FastAPI:
             question=request.question,
             label=True if request.question.type == "noul" else list(request.question.criteria)[0],
         )
-        return trainer.predict([example])[0]
+        result = trainer.predict([example])[0]
+        result["replay_key"] = replay_key(request.state, request.question.model_dump())
+        result["evidence"] = request.evidence
+        return result
 
     return app
