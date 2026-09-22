@@ -106,3 +106,14 @@ copy private weights, training data, or source code from these projects.
 
 For the code-level review, license notes, and keep/adapt/reject decisions, see
 [`docs/research/2026-09-22-openjev-20-repo-audit.md`](docs/research/2026-09-22-openjev-20-repo-audit.md).
+
+### Sequential integration commits
+
+The additions were landed independently so each source-derived capability can be
+reviewed or reverted without mixing model code and documentation:
+
+- `e680606` — provenance receipts and source/environment hashes
+- `e2a5c88` — calibration, robustness audits, benchmark contract, direct-logit readout
+- `759f9c9` — TorchScript export, evidence references, replay receipts
+- `826418c` — replay/evidence metadata in `/v1/decide`
+- `f30240c` — cross-fit calibration and named baseline comparison
