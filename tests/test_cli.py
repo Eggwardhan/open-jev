@@ -47,3 +47,37 @@ def test_decision_response_contains_replay_key_and_evidence():
         DecisionRequest(state={"text": "safe"}, question=rows[0].question, evidence=[])
     )
     assert "replay_key" in result and result["evidence"] == []
+
+
+def test_cli_local_decide_accepts_qwen_model(monkeypatch, capsys):
+    from open_jev import cli
+
+    class FakeLocal:
+        @classmethod
+        def from_pretrained(cls, model_id, device):
+            assert model_id == "Qwen/Qwen2.5-0.5B-Instruct"
+            return cls()
+
+        def decide(self, state, question):
+            return {"label": "safe", "probabilities": {"safe": 1.0}}
+
+    monkeypatch.setattr(cli, "LocalDecisionModel", FakeLocal)
+    code = cli.main(
+        [
+            "local-decide",
+            "--model",
+            "Qwen/Qwen2.5-0.5B-Instruct",
+            "--state",
+            "ok",
+            "--type",
+            "choice",
+            "--instructions",
+            "route",
+            "--criteria",
+            '{"safe":"safe","risk":"risk"}',
+            "--device",
+            "cpu",
+        ]
+    )
+    assert code == 0
+    assert '"label": "safe"' in capsys.readouterr().out

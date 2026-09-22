@@ -130,3 +130,54 @@ and [Citation](CITATION.cff) before publishing results. See the
 source and adaptation record behind the integrated modules.
 
 Licensed under Apache-2.0.
+
+## Local model backends
+
+`open-jev` now has a model registry rather than a single-model assumption. The
+registry records the model family, the local loading path, and the repository
+that motivated the adapter:
+
+| Model family | Local adapter | Models currently registered | Source implementation |
+|---|---|---|---|
+| Causal next-token readout | `LocalDecisionModel` | Qwen2.5-0.5B-Instruct, Qwen3-0.6B, Qwen3-4B-Instruct-2507 | [zhihz/openjev](https://github.com/zhihz/openjev), [TheoLeeCJ/SemIf](https://github.com/TheoLeeCJ/SemIf) |
+| Encoder candidate logits | `EncoderDecisionModel` | `heman10x/rlcd-modernbert-151m`, `knowledgator/gliclass-modern-base-v2.0` | [openJev-verdict-2.0](https://github.com/Heman10x-NGU/openJev-verdict-2.0) |
+| Local SGLang/vLLM service | `SGLangDecisionModel` | Qwen3.6-35B-A3B, DiffusionGemma 26B | [openjev-sglang](https://github.com/ekzhang/openjev-sglang), [razorback16/openjev](https://github.com/razorback16/openjev) |
+
+The adapters share the same `Question` contract and return a selected label,
+probabilities, confidence, and model identity. The causal adapter performs a
+single-token letter readout; the encoder adapter uses the `<<LABEL>>...<<SEP>>`
+layout used by the ModernBERT/GLiClass route; the SGLang adapter talks only to a
+user-provided local endpoint. None of these paths call TypeSafe's hosted API.
+
+Install the optional dependencies only for the backend you need:
+
+```bash
+pip install -e '.[hf]'       # Qwen and other Hugging Face causal models
+pip install -e '.[encoder]'  # ModernBERT/GLiClass checkpoints
+```
+
+List the supported model registrations with:
+
+```python
+from open_jev.backends import list_backends
+for backend in list_backends():
+    print(backend.model_id, backend.kind.value, backend.source_repo)
+```
+
+Run a local causal model directly:
+
+```bash
+open-jev local-decide \
+  --model Qwen/Qwen3-0.6B \
+  --state 'The customer was charged twice.' \
+  --type choice \
+  --instructions 'Which queue should handle this?' \
+  --criteria '{"billing":"payments and refunds","technical":"software bugs"}' \
+  --device cpu
+```
+
+The Qwen model IDs above come from the public model cards and local inference
+instructions for [Qwen3-0.6B](https://huggingface.co/Qwen/Qwen3-0.6B) and
+[Qwen2.5-0.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct). Their
+reported model availability and license metadata should be rechecked before
+redistributing downloaded weights.
