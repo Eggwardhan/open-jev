@@ -154,6 +154,23 @@ Install the optional dependencies only for the backend you need:
 ```bash
 pip install -e '.[hf]'       # Qwen and other Hugging Face causal models
 pip install -e '.[encoder]'  # ModernBERT/GLiClass checkpoints
+pip install sglang            # only on the host that will serve a local model
+```
+
+If the host cannot reach `huggingface.co`, use a Hugging Face mirror when
+downloading weights. The framework still receives a normal local path or model
+ID; the mirror is only a download setting:
+
+```bash
+export HF_ENDPOINT=https://hf-mirror.com
+python - <<'PY'
+from huggingface_hub import snapshot_download
+
+snapshot_download(
+    "knowledgator/gliclass-modern-base-v2.0",
+    local_dir="models/gliclass-modern-base-v2.0",
+)
+PY
 ```
 
 List the supported model registrations with:
@@ -175,6 +192,66 @@ open-jev local-decide \
   --criteria '{"billing":"payments and refunds","technical":"software bugs"}' \
   --device cpu
 ```
+
+Load an encoder checkpoint with the same decision contract:
+
+```python
+from open_jev.encoder_model import EncoderDecisionModel
+from open_jev.schema import Question
+
+model = EncoderDecisionModel.from_pretrained(
+    "knowledgator/gliclass-modern-base-v2.0",
+    device="cuda",  # use "cpu" for an offline smoke test
+)
+question = Question(
+    type="choice",
+    instructions="Which queue should handle this?",
+    criteria={"billing": "payments and refunds", "technical": "software bugs"},
+)
+print(model.decide({"customer_message": "charged twice"}, question))
+```
+
+For an offline mirror download, pass the downloaded directory instead of the
+Hub ID:
+
+```python
+model = EncoderDecisionModel.from_pretrained(
+    "models/gliclass-modern-base-v2.0", device="cpu"
+)
+```
+
+Start a local SGLang service on the model host. Vanilla SGLang exposes its
+standard generation endpoints; the service used by this adapter must additionally
+expose the Jev-compatible `/v1/systemone` endpoint. The
+`openjev-sglang` implementation is one reference for that wrapper:
+
+```bash
+python -m sglang.launch_server \
+  --model-path Qwen/Qwen3-0.6B \
+  --host 127.0.0.1 \
+  --port 30000 \
+  --mem-fraction-static 0.25
+```
+
+Then call the service through the generic registry:
+
+```python
+from open_jev.backends import load_backend
+from open_jev.schema import Question
+
+model = load_backend(
+    "Qwen/Qwen3-0.6B",
+    kind="sglang",
+    endpoint="http://127.0.0.1:30000",
+)
+question = Question(type="noul", instructions="Is the system ready?")
+print(model.decide({"status": "ready"}, question))
+```
+
+For larger models such as Qwen3.6-35B-A3B, replace `--model-path` and ensure
+the GPU has enough free memory before starting the service. The SGLang adapter
+does not download weights and does not call a hosted API; it only sends the
+typed decision request to the endpoint you provide.
 
 The Qwen model IDs above come from the public model cards and local inference
 instructions for [Qwen3-0.6B](https://huggingface.co/Qwen/Qwen3-0.6B) and
