@@ -103,9 +103,15 @@ class LocalDecisionModel:
         prompt = build_decision_prompt(state, question)
         import torch
 
+        readout_device = self.device
+        if readout_device == "auto":
+            try:
+                readout_device = str(next(self.model.parameters()).device)
+            except (AttributeError, StopIteration):
+                readout_device = "cpu"
         with torch.inference_mode():
             label_probabilities = readout_single_token(
-                self.model, self.tokenizer, prompt, labels, device=self.device
+                self.model, self.tokenizer, prompt, labels, device=readout_device
             )
         probabilities = {
             key: label_probabilities[label] for key, label in zip(keys, labels, strict=True)

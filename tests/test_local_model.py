@@ -39,3 +39,9 @@ def test_local_decision_maps_letter_probabilities_to_keys():
     assert result["label"] == "billing"
     assert set(result["probabilities"]) == {"billing", "technical"}
     assert abs(sum(result["probabilities"].values()) - 1) < 1e-6
+
+
+def test_auto_device_resolves_for_injected_model():
+    question = Question(type="choice", instructions="route", criteria={"a": "A", "b": "B"})
+    result = LocalDecisionModel(FakeModel(), FakeTokenizer(), device="auto").decide("x", question)
+    assert result["label"] == "a"
