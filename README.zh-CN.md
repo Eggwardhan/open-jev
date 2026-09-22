@@ -2,6 +2,8 @@
 
 [English README](README.md)
 
+![open-jev 决策图](docs/assets/open-jev-banner.jpg)
+
 > **面向 AI Agent 的类型化、可校准决策层。**
 
 open-jev 是一个开源 PyTorch 决策层，适用于 Agent 路由、工具选择、RAG 检查和评测。它把状态、类型化问题和动态候选集合转换为概率、证据和可重放的决策结果。

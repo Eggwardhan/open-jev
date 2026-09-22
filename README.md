@@ -2,6 +2,8 @@
 
 [中文文档](README.zh-CN.md)
 
+![open-jev decision graph](docs/assets/open-jev-banner.jpg)
+
 > **Typed, calibrated decisions for AI agents.**
 
 open-jev is an open-source PyTorch decision layer for agent routing, tool
