@@ -74,3 +74,35 @@ pytest -q
 ```
 
 Licensed under Apache-2.0.
+
+## Integration provenance: 20 related repositories
+
+The table below records the design source for each integrated or explicitly
+rejected idea. The implementation in this repository is original and does not
+copy private weights, training data, or source code from these projects.
+
+| Source repository | Design reviewed | Local result |
+|---|---|---|
+| [jaredpalmer/kev](https://github.com/jaredpalmer/kev) | frozen splits, calibration and experiment receipts | `provenance.py`, `calibration.py`; adapted |
+| [TheoLeeCJ/SemIf](https://github.com/TheoLeeCJ/SemIf) | direct option-logit readout and shared/separate comparisons | `readout.py`; adapted as an optional protocol |
+| [featherless-ai/simple-jev](https://github.com/featherless-ai/simple-jev) | versioned prompts and typed response validation | schema and readout contracts; adapted |
+| [daseinlabs/open-jev](https://github.com/daseinlabs/open-jev) | frozen feature metadata and context-shuffle control | `audits.py`; adapted |
+| [wfzyx/von](https://github.com/wfzyx/von) | backend-independent candidate axis | existing dynamic scorer; retained |
+| [Heman10x-NGU/openJev-verdict-2.0](https://github.com/Heman10x-NGU/openJev-verdict-2.0) | permutation robustness and calibration artifacts | `audits.py`, `calibration.py`; adapted; weights not copied |
+| [ikermoel/open-alternative-jev](https://github.com/ikermoel/open-alternative-jev) | packed prompts and temperature scaling | `calibration.py`; adapted |
+| [razorback16/openjev](https://github.com/razorback16/openjev) | typed service and backend separation | `serve.py` boundary; reference only |
+| [ekzhang/openjev-sglang](https://github.com/ekzhang/openjev-sglang) | latency, usage and branch-level failure reporting | `benchmark.py`; adapted |
+| [fstandhartinger/jevbench](https://github.com/fstandhartinger/jevbench) | separate accuracy, calibration, speed and cost axes | `benchmark.py`; adapted |
+| [receptron/laya](https://github.com/receptron/laya) | export and sequence validation contracts | `export.py`; adapted; ONNX remains optional |
+| [nico-martin/open-jev](https://github.com/nico-martin/open-jev) | typed question and unique-option validation | schema/readout validation; adapted |
+| [kyegomez/open-jev](https://github.com/kyegomez/open-jev) | shared state encoder and typed heads | existing model architecture; design reference |
+| [intikhab49/open-jev-typed-decision-engine](https://github.com/intikhab49/open-jev-typed-decision-engine) | separated train/calibrate/evaluate/export stages | runner plus `calibration.py`/`export.py`; adapted |
+| [kshetrajna12/reflex](https://github.com/kshetrajna12/reflex) | option-order and packed-inference audits | `audits.py`; adapted |
+| [deepanwadhwa/OpenDecision](https://github.com/deepanwadhwa/OpenDecision) | evidence references alongside decisions | `evidence.py`; adapted |
+| [IamBusy/OpenJev-Vision](https://github.com/IamBusy/OpenJev-Vision) | branch-cache keys and replayable experiments | `replay.py`; adapted without image dependency |
+| [SAGAR-TAMANG/sarvam-jev](https://github.com/SAGAR-TAMANG/sarvam-jev) | prompt parity and shared-input identity | provenance/replay keys; adapted |
+| [mithalouni/system-one-open](https://github.com/mithalouni/system-one-open) | separated training/evaluation reports | `benchmark.py`; adapted |
+| [logicrw/awesome-jev-projects](https://github.com/logicrw/awesome-jev-projects) | source review, receipts and exclusion records | this section and `docs/research/2026-09-22-openjev-20-repo-audit.md` |
+
+For the code-level review, license notes, and keep/adapt/reject decisions, see
+[`docs/research/2026-09-22-openjev-20-repo-audit.md`](docs/research/2026-09-22-openjev-20-repo-audit.md).
