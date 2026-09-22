@@ -181,3 +181,21 @@ instructions for [Qwen3-0.6B](https://huggingface.co/Qwen/Qwen3-0.6B) and
 [Qwen2.5-0.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct). Their
 reported model availability and license metadata should be rechecked before
 redistributing downloaded weights.
+
+The built-in registry is a provenance catalog, not an allowlist. A user model can
+be loaded without changing framework code by declaring its backend kind:
+
+```python
+from open_jev.backends import load_backend
+
+backend = load_backend(
+    "org/my-causal-model",
+    kind="causal",       # causal, encoder, or sglang
+    device="cuda",
+)
+result = backend.decide(state, question)
+```
+
+Projects can also register a model for discoverability with
+`register_backend(BackendSpec(...))`. The core decision contract does not depend
+on Qwen, ModernBERT, GLiClass, DiffusionGemma, or any specific repository.

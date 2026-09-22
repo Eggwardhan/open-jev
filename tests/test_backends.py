@@ -58,3 +58,26 @@ def test_encoder_prompt_uses_gliclass_label_markers():
     )
     prompt = build_encoder_prompt("context", question)
     assert prompt.startswith("<<LABEL>>") and "<<SEP>>" in prompt and "Question: route" in prompt
+
+
+def test_custom_model_id_can_use_generic_causal_loader(monkeypatch):
+    from open_jev import backends
+
+    class Fake:
+        pass
+
+    monkeypatch.setattr(
+        backends.LocalDecisionModel,
+        "from_pretrained",
+        lambda model_id, device="auto", **kwargs: Fake(),
+    )
+    loaded = backends.load_backend("org/custom-causal", kind="causal", device="cpu")
+    assert isinstance(loaded, Fake)
+
+
+def test_custom_backend_can_be_registered_without_editing_core():
+    from open_jev import backends
+
+    spec = backends.BackendSpec("org/custom", backends.BackendKind.CAUSAL, "user", "local")
+    backends.register_backend(spec)
+    assert backends.BACKENDS["org/custom"] == spec

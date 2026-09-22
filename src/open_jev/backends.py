@@ -3,9 +3,17 @@
 from __future__ import annotations
 from dataclasses import dataclass
 from enum import Enum
-from typing import Any
+from typing import Any, Protocol
+from collections.abc import Mapping, Sequence
+from .schema import Question
 from .encoder_model import EncoderDecisionModel
 from .local_model import LocalDecisionModel
+
+
+class DecisionBackend(Protocol):
+    def decide(
+        self, state: str | Mapping[str, Any] | Sequence[Any], question: Question
+    ) -> dict[str, Any]: ...
 
 
 class BackendKind(str, Enum):
@@ -18,8 +26,8 @@ class BackendKind(str, Enum):
 class BackendSpec:
     model_id: str
     kind: BackendKind
-    source_repo: str
-    notes: str
+    source_repo: str = "user"
+    notes: str = ""
 
 
 BACKENDS: dict[str, BackendSpec] = {
@@ -65,19 +73,33 @@ BACKENDS: dict[str, BackendSpec] = {
 }
 
 
+def register_backend(spec: BackendSpec) -> None:
+    if not spec.model_id.strip():
+        raise ValueError("backend model_id cannot be empty")
+    BACKENDS[spec.model_id] = spec
+
+
 def list_backends() -> tuple[BackendSpec, ...]:
     return tuple(BACKENDS.values())
 
 
 def load_backend(
-    model_id: str, *, endpoint: str | None = None, device: str = "auto", **kwargs: Any
-) -> Any:
+    model_id: str,
+    *,
+    kind: BackendKind | str | None = None,
+    endpoint: str | None = None,
+    device: str = "auto",
+    **kwargs: Any,
+) -> DecisionBackend:
     spec = BACKENDS.get(model_id)
-    if spec is None:
-        raise ValueError(f"unsupported model id: {model_id}; use list_backends()")
-    if spec.kind is BackendKind.CAUSAL:
+    selected_kind = BackendKind(kind) if kind is not None else (spec.kind if spec else None)
+    if selected_kind is None:
+        raise ValueError(
+            f"unknown model id: {model_id}; pass kind='causal', 'encoder', or 'sglang'"
+        )
+    if selected_kind is BackendKind.CAUSAL:
         return LocalDecisionModel.from_pretrained(model_id, device=device, **kwargs)
-    if spec.kind is BackendKind.ENCODER:
+    if selected_kind is BackendKind.ENCODER:
         return EncoderDecisionModel.from_pretrained(model_id, device=device, **kwargs)
     if endpoint is None:
         raise ValueError("SGLang/DiffusionGemma backends require a local endpoint")
